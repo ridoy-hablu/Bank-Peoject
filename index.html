@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flower Bank App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+  <!-- App Container -->
+  <div class="bg-white shadow-lg rounded-lg w-full max-w-3xl p-6">
+    <!-- App Header -->
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Flower Bank App</h1>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="space-y-6">
+      <!-- Current Balance -->
+      <div class="flex items-center justify-between bg-gray-100 p-4 rounded-lg">
+        <span class="text-lg font-semibold">Current Balance:</span>
+        <span id="balance" class="text-2xl font-bold text-green-500">$0.00</span>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <button id="add-money-btn" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition">
+          Add Money
+        </button>
+        <button id="withdraw-money-btn" class="bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-600 transition">
+          Withdraw Money
+        </button>
+        <button id="transaction-history-btn" class="bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600 transition">
+          Transaction History
+        </button>
+      </div>
+    </div>
+
+    <!-- Add Money Section -->
+    <div id="add-money" class="hidden space-y-4">
+      <h2 class="text-xl font-semibold">Add Money</h2>
+      <input 
+        id="add-money-input" 
+        type="number" 
+        placeholder="Enter amount" 
+        class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+      />
+      <div class="flex gap-4">
+        <button id="confirm-add-money-btn" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition">
+          Confirm
+        </button>
+        <button id="cancel-add-btn" class="bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600 transition">
+          Cancel
+        </button>
+      </div>
+    </div>
+
+    <!-- Withdraw Money Section -->
+    <div id="withdraw-money" class="hidden space-y-4">
+      <h2 class="text-xl font-semibold">Withdraw Money</h2>
+      <input 
+        id="withdraw-money-input" 
+        type="number" 
+        placeholder="Enter amount" 
+        class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:ring-yellow-300"
+      />
+      <div class="flex gap-4">
+        <button id="confirm-withdraw-money-btn" class="bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-600 transition">
+          Confirm
+        </button>
+        <button id="cancel-withdraw-btn" class="bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600 transition">
+          Cancel
+        </button>
+      </div>
+    </div>
+
+    <!-- Transaction History Section -->
+    <div id="transaction-history" class="hidden space-y-4">
+      <h2 class="text-xl font-semibold">Transaction History</h2>
+      <table class="w-full border border-gray-300">
+        <thead>
+          <tr class="bg-gray-100">
+            <th class="border border-gray-300 py-2 px-4">Date</th>
+            <th class="border border-gray-300 py-2 px-4">Type</th>
+            <th class="border border-gray-300 py-2 px-4">Amount</th>
+            <th class="border border-gray-300 py-2 px-4">Balance</th>
+          </tr>
+        </thead>
+        <tbody id="transaction-list">
+          <!-- Transactions will populate here dynamically -->
+        </tbody>
+      </table>
+      <button id="back-btn" class="bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600 transition">
+        Back to Dashboard
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js">
+ 
+  </script>
+</body>
+</html>
